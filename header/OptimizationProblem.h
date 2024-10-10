@@ -1,15 +1,22 @@
+#ifndef OPTIMIZATIONPROBLEM_H
+#define OPTIMIZATIONPROBLEM_H
+
 using namespace std;
+
+#include <iostream>
 
 class OptimizationProblem 
 {
     public:
 
-    virtual double findSolution(short dimension) {
-        return 1;
-    }
+    virtual ~OptimizationProblem(){};
+
+    virtual double findSolution(short dimension) {};
     
     protected:
 
     float lowerCon;
     float upperCon;
 };
+
+#endif

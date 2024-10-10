@@ -4,6 +4,8 @@
 #include <vector>
 #include <cstdlib>
 #include <math.h>
+#include <time.h> 
+#include <iostream>
 
 Ackley::Ackley() 
 {

@@ -1,16 +1,16 @@
-#ifndef ACKLEY_H
-#define ACKLEY_H
+#ifndef RASTRIGIN_H
+#define RASTRIGIN_H
 
 #include "OptimizationProblem.h"
 
 using namespace std;
 
-class Ackley : public OptimizationProblem
+class Rastrigin : public OptimizationProblem
 {
     public:
 
-    Ackley();
-    ~Ackley(){};
+    Rastrigin();
+    ~Rastrigin(){};
 
     double findSolution(short dimension);
 };

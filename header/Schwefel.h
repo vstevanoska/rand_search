@@ -1,16 +1,16 @@
-#ifndef ACKLEY_H
-#define ACKLEY_H
+#ifndef SCHWEFEL_H
+#define SCHWEFEL_H
 
 #include "OptimizationProblem.h"
 
 using namespace std;
 
-class Ackley : public OptimizationProblem
+class Schwefel : public OptimizationProblem
 {
     public:
 
-    Ackley();
-    ~Ackley(){};
+    Schwefel();
+    ~Schwefel(){};
 
     double findSolution(short dimension);
 };

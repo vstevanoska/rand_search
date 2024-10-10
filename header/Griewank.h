@@ -1,16 +1,16 @@
-#ifndef ACKLEY_H
-#define ACKLEY_H
+#ifndef GRIEWANK_H
+#define GRIEWANK_H
 
 #include "OptimizationProblem.h"
 
 using namespace std;
 
-class Ackley : public OptimizationProblem
+class Griewank : public OptimizationProblem
 {
     public:
 
-    Ackley();
-    ~Ackley(){};
+    Griewank();
+    ~Griewank(){};
 
     double findSolution(short dimension);
 };
