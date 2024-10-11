@@ -1,19 +1,19 @@
 #define _USE_MATH_DEFINES
 
-#include "../header/Rosenbrock.h"
+#include "../header/Michalewicz.h"
 #include <vector>
 #include <cstdlib>
 #include <math.h>
 #include <time.h> 
 #include <iostream>
 
-Rosenbrock::Rosenbrock() 
+Michalewicz::Michalewicz() 
 {
-    lowerCon = -5.0f;
-    upperCon = 10.0f;
+    lowerCon = 0.0f;
+    upperCon = M_PI;
 }
 
-double Rosenbrock::findSolution(short dimension)
+double Michalewicz::findSolution(short dimension)
 {
     //generate vector of random float values within the constrained space
 
@@ -23,18 +23,20 @@ double Rosenbrock::findSolution(short dimension)
         generatedValues.push_back(lowerCon + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
 
-    cout << "Rosenbrock vector: ";
+    cout << "Michalewicz vector: ";
     for (int i = 0; i < generatedValues.size(); ++i)
         cout << generatedValues[i] << " ";
     cout << endl;
+
+    //declare used constants in equation
+    short m = 10;
 
     //calculate
 
     double sum = 0;
 
-    for (int i = 0; i < generatedValues.size() - 1; ++i)
-        sum += 100 * pow((generatedValues[i + 1] - pow(generatedValues[i], 2)), 2) + pow((generatedValues[i] - 1), 2);
+    for (int i = 0; i < generatedValues.size(); ++i)
+        sum += sin(generatedValues[i]) * pow(sin((double)(((i + 1) * pow(generatedValues[i], 2)) / M_PI)), (2 * m));
 
-
-    return sum;
+    return (-1) * sum;
 }

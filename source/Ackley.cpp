@@ -22,6 +22,11 @@ double Ackley::findSolution(short dimension)
     for (int i = 0; i < dimension; ++i)
         generatedValues.push_back(lowerCon + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
+    cout << "Ackley vector: ";
+    for (int i = 0; i < generatedValues.size(); ++i)
+        cout << generatedValues[i] << " ";
+    cout << endl;
+
 
     //declare used constants in equation
     short a = 20;

@@ -28,6 +28,10 @@ double Bukin::findSolution(short dimension)
     //generate value of second coordinate
     generatedValues.push_back(lowerConSecond + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperConSecond - lowerConSecond))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
+    cout << "Bukin vector: ";
+    for (int i = 0; i < generatedValues.size(); ++i)
+        cout << generatedValues[i] << " ";
+    cout << endl;
 
     //calculate
 

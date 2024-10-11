@@ -23,6 +23,11 @@ double Schwefel::findSolution(short dimension)
         generatedValues.push_back(lowerCon + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
 
+    cout << "Schwefel vector: ";
+    for (int i = 0; i < generatedValues.size(); ++i)
+        cout << generatedValues[i] << " ";
+    cout << endl;
+
     //calculate
 
     double sum = 0;

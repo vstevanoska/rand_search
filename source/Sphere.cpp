@@ -30,6 +30,11 @@ double Sphere::findSolution(short dimension)
 
     }
 
+    cout << "Sphere vector: ";
+    for (int i = 0; i < generatedValues.size(); ++i)
+        cout << generatedValues[i] << " ";
+    cout << endl;
+
     //calculate
 
     double sum = 0;

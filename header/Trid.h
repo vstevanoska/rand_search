@@ -1,16 +1,16 @@
-#ifndef ROSENBROCK_H
-#define ROSENBROCK_H
+#ifndef TRID_H
+#define TRID_H
 
 #include "OptimizationProblem.h"
 
 using namespace std;
 
-class Rosenbrock : public OptimizationProblem
+class Trid : public OptimizationProblem
 {
     public:
 
-    Rosenbrock();       //make a copy constructor instead of this
-    ~Rosenbrock(){};
+    Trid(int dimension);       //make a copy constructor instead of this
+    ~Trid(){};
 
     double findSolution(short dimension);
 };
