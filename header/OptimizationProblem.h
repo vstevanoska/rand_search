@@ -1,22 +1,18 @@
 #ifndef OPTIMIZATIONPROBLEM_H
 #define OPTIMIZATIONPROBLEM_H
 
-using namespace std;
-
-#include <iostream>
-
 class OptimizationProblem 
 {
     public:
 
     virtual ~OptimizationProblem(){};
 
-    virtual double findSolution(short dimension) {};
+    virtual double findSolution(int dimension) {};
     
     protected:
 
-    float lowerCon;
-    float upperCon;
+    double lowerCon;    //lower constraint of the search space
+    double upperCon;    //upper constraint of the search space
 };
 
 #endif

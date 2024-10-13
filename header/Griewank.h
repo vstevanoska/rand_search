@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Griewank : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class Griewank : public OptimizationProblem
     Griewank();
     ~Griewank(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

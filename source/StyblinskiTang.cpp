@@ -4,36 +4,29 @@
 #include <vector>
 #include <cstdlib>
 #include <math.h>
-#include <time.h> 
-#include <iostream>
 
 StyblinskiTang::StyblinskiTang() 
 {
-    lowerCon = -5.0f;
-    upperCon = 5.0f;
+    lowerCon = -5.0;
+    upperCon = 5.0;
 }
 
-double StyblinskiTang::findSolution(short dimension)
+double StyblinskiTang::findSolution(int dimension)
 {
     //generate vector of random float values within the constrained space
 
-    vector<float> generatedValues;
+    vector<double> generatedValues;
 
     for (int i = 0; i < dimension; ++i)
-        generatedValues.push_back(lowerCon + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
-
-    cout << "Styb vector: ";
-    for (int i = 0; i < generatedValues.size(); ++i)
-        cout << generatedValues[i] << " ";
-    cout << endl;
+        generatedValues.push_back(lowerCon + (static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
 
     //calculate
 
     double sum = 0;
 
-    for (int i = 0; i < generatedValues.size(); ++i) 
-        sum += (pow(generatedValues[0], 4) - 16 * pow(generatedValues[i], 2) + 5 * generatedValues[i]);
+    for (int i = 0; i < generatedValues.size(); ++i)
+        sum += (pow(generatedValues[0], 4) - (16.0 * pow(generatedValues[i], 2)) + (5.0 * generatedValues[i]));
 
-    return (double)(sum / 2);
+    return (double)(sum / 2.0);
 }

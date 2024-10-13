@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class StyblinskiTang : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class StyblinskiTang : public OptimizationProblem
     StyblinskiTang();
     ~StyblinskiTang(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

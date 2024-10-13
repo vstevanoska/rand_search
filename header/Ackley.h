@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Ackley : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class Ackley : public OptimizationProblem
     Ackley();
     ~Ackley(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

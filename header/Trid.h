@@ -3,16 +3,14 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Trid : public OptimizationProblem
 {
     public:
 
-    Trid(int dimension);       //make a copy constructor instead of this
+    Trid(int dimension);    //copy constructor, constraints depend on dimension of problem
     ~Trid(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

@@ -4,29 +4,22 @@
 #include <vector>
 #include <cstdlib>
 #include <math.h>
-#include <time.h> 
-#include <iostream>
 
 Rosenbrock::Rosenbrock() 
 {
-    lowerCon = -5.0f;
-    upperCon = 10.0f;
+    lowerCon = -5.0;
+    upperCon = 10.0;
 }
 
-double Rosenbrock::findSolution(short dimension)
+double Rosenbrock::findSolution(int dimension)
 {
     //generate vector of random float values within the constrained space
 
-    vector<float> generatedValues;
+    vector<double> generatedValues;
 
     for (int i = 0; i < dimension; ++i)
-        generatedValues.push_back(lowerCon + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
+        generatedValues.push_back(lowerCon + (static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
-
-    cout << "Rosenbrock vector: ";
-    for (int i = 0; i < generatedValues.size(); ++i)
-        cout << generatedValues[i] << " ";
-    cout << endl;
 
     //calculate
 

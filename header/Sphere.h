@@ -12,12 +12,14 @@ class Sphere : public OptimizationProblem
     Sphere();
     ~Sphere(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 
     private:
 
-    float lowerConEven;
-    float upperConEven;
+    //even- and odd-indexed variables have different constraints. Odd-indexed variable constraints are saved in parent class.
+
+    double lowerConEven;    //even-indexed lower constraint
+    double upperConEven;    //even-indexed upper constraint
 };
 
 #endif

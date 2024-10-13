@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Levy : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class Levy : public OptimizationProblem
     Levy();
     ~Levy(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

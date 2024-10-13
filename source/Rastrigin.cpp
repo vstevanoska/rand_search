@@ -4,28 +4,22 @@
 #include <vector>
 #include <cstdlib>
 #include <math.h>
-#include <time.h> 
-#include <iostream>
 
 Rastrigin::Rastrigin() 
 {
-    lowerCon = -5.12f;
-    upperCon = 5.12f;
+    lowerCon = -5.12;
+    upperCon = 5.12;
 }
 
-double Rastrigin::findSolution(short dimension)
+double Rastrigin::findSolution(int dimension)
 {
     //generate vector of random float values within the constrained space
 
-    vector<float> generatedValues;
+    vector<double> generatedValues;
 
     for (int i = 0; i < dimension; ++i)
-        generatedValues.push_back(lowerCon + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
+        generatedValues.push_back(lowerCon + (static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
-    cout << "Rastrigin vector: ";
-    for (int i = 0; i < generatedValues.size(); ++i)
-        cout << generatedValues[i] << " ";
-    cout << endl;
 
 
     //calculate
@@ -33,7 +27,7 @@ double Rastrigin::findSolution(short dimension)
     double sum = 0;
 
     for (int i = 0; i < generatedValues.size(); ++i) 
-        sum += (pow(generatedValues[i], 2) - (10 * cos(2 * M_PI * generatedValues[i])));
+        sum += (pow(generatedValues[i], 2) - (10.0 * cos(2 * M_PI * generatedValues[i])));
 
-    return (10 * generatedValues.size()) + sum;
+    return (10.0 * generatedValues.size()) + sum;
 }

@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Schwefel : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class Schwefel : public OptimizationProblem
     Schwefel();
     ~Schwefel(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

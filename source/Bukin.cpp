@@ -4,34 +4,28 @@
 #include <vector>
 #include <cstdlib>
 #include <math.h>
-#include <time.h> 
-#include <iostream>
 
 Bukin::Bukin() 
 {
-    lowerCon = -15.0f; //of first coordinate
-    upperCon = -5.0f;  //of first coordinate
+    lowerCon = -15.0; //of first coordinate
+    upperCon = -5.0;  //of first coordinate
 
-    lowerConSecond = -3.0f;
-    upperConSecond = 3.0f;
+    lowerConSecond = -3.0;
+    upperConSecond = 3.0;
 }
 
-double Bukin::findSolution(short dimension)
+double Bukin::findSolution(int dimension)
 {
     //generate vector of random float values within the constrained space
 
-    vector<float> generatedValues;
+    vector<double> generatedValues;
 
     //generate value of first coordinate
-    generatedValues.push_back(lowerCon + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
+    generatedValues.push_back(lowerCon + (static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
     //generate value of second coordinate
-    generatedValues.push_back(lowerConSecond + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperConSecond - lowerConSecond))))); //lower + (rand / (RANDMAX / (upper - lower)))
+    generatedValues.push_back(lowerConSecond + (static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / (upperConSecond - lowerConSecond)))));
 
-    cout << "Bukin vector: ";
-    for (int i = 0; i < generatedValues.size(); ++i)
-        cout << generatedValues[i] << " ";
-    cout << endl;
 
     //calculate
 

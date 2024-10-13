@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Bukin : public OptimizationProblem
 {
     public:
@@ -12,12 +10,14 @@ class Bukin : public OptimizationProblem
     Bukin();
     ~Bukin(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 
     private:
 
-    float lowerConSecond;
-    float upperConSecond;
+    //2d only problem. x1 and x2 have different constraints to search space. x1 constraints are saved in parent class.
+
+    double lowerConSecond;   //x2 lower constraint
+    double upperConSecond;   //x2 upper constraint
 };
 
 #endif

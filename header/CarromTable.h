@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class CarromTable : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class CarromTable : public OptimizationProblem
     CarromTable();
     ~CarromTable(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

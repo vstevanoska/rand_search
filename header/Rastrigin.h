@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Rastrigin : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class Rastrigin : public OptimizationProblem
     Rastrigin();
     ~Rastrigin(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

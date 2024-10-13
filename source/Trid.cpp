@@ -4,29 +4,22 @@
 #include <vector>
 #include <cstdlib>
 #include <math.h>
-#include <time.h> 
-#include <iostream>
 
 Trid::Trid(int dimension)
 {
-    lowerCon = (float)((-1) * pow(dimension, 2));
-    upperCon = (float)(pow(dimension, 2));
+    lowerCon = (double)((-1.0) * pow(dimension, 2));
+    upperCon = (double)(pow(dimension, 2));
 }
 
-double Trid::findSolution(short dimension)
+double Trid::findSolution(int dimension)
 {
     //generate vector of random float values within the constrained space
 
-    vector<float> generatedValues;
+    vector<double> generatedValues;
 
     for (int i = 0; i < dimension; ++i)
-        generatedValues.push_back(lowerCon + (static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
+        generatedValues.push_back(lowerCon + (static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / (upperCon - lowerCon))))); //lower + (rand / (RANDMAX / (upper - lower)))
 
-
-    cout << "Trid vector: ";
-    for (int i = 0; i < generatedValues.size(); ++i)
-        cout << generatedValues[i] << " ";
-    cout << endl;
 
     //calculate
 

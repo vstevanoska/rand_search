@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Rosenbrock : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class Rosenbrock : public OptimizationProblem
     Rosenbrock();
     ~Rosenbrock(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif

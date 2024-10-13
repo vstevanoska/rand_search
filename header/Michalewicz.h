@@ -3,8 +3,6 @@
 
 #include "OptimizationProblem.h"
 
-using namespace std;
-
 class Michalewicz : public OptimizationProblem
 {
     public:
@@ -12,7 +10,7 @@ class Michalewicz : public OptimizationProblem
     Michalewicz();
     ~Michalewicz(){};
 
-    double findSolution(short dimension);
+    double findSolution(int dimension);
 };
 
 #endif
